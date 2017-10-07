@@ -1,7 +1,8 @@
 class UCLAPI::Room < OpenStruct
   def bookings
     client.roombookings.bookings(
-      roomid: roomid
+      roomid: roomid,
+      siteid: siteid
     )
   end
 

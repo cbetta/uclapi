@@ -1,10 +1,13 @@
 require "bundler/gem_tasks"
-require "rspec/core/rake_task"
-
-RSpec::Core::RakeTask.new(:spec)
+require 'rake/testtask'
 
 task :default => :spec
 
 task :console do
   exec 'irb -r uclapi -I ./lib -r awesome_print'
+end
+
+Rake::TestTask.new(:spec) do |t|
+  t.test_files = FileList['spec/**/*_spec.rb']
+  t.warning = true
 end

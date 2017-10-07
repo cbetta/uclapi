@@ -17,10 +17,7 @@ module UCLAPI
         ENV['UCLAPI_TOKEN'] || raise(KeyError, "Missing required argument: token")
       end
 
-      @debug = options.fetch(:debug) do
-        ENV['UCLAPI_DEBUG']
-      end
-
+      @debug = (options[:debug] || ENV['UCLAPI_DEBUG']) ? true : false 
       @http = Net::HTTP.new(ENDPOINT, Net::HTTP.https_default_port)
       http.use_ssl = true
 
