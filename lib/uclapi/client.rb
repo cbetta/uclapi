@@ -31,6 +31,10 @@ module UCLAPI
       UCLAPI::Client::Roombookings.new(self)
     end
 
+    def search
+      UCLAPI::Client::Search.new(self)
+    end
+
     def get(path, params = {})
       uri = uri_for(path, params)
       message = Net::HTTP::Get.new(uri.request_uri)
