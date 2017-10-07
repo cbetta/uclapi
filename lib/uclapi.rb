@@ -1,5 +1,6 @@
 require "uclapi/version"
-
-module Uclapi
-  # Your code goes here...
-end
+require 'uclapi/client'
+require 'uclapi/client/roombookings'
+require 'uclapi/room'
+require 'uclapi/booking'
+require 'uclapi/equipment'

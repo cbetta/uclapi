@@ -1,3 +1,3 @@
-module Uclapi
+module UCLAPI
   VERSION = "0.1.0"
 end
