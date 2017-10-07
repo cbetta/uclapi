@@ -11,8 +11,10 @@ class UCLAPI::Client::Roombookings
   end
 
   def bookings(params = {})
-    @client.get('/roombookings/bookings', params)['bookings'].map do |booking|
+    result = @client.get('/roombookings/bookings', params)
+    result['bookings'].map do |booking|
       booking[:client] = @client
+      booking[:page_token] = result['page_token']
       UCLAPI::Booking.new(booking)
     end
   end

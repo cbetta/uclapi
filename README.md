@@ -56,6 +56,10 @@ same parameters while automatically setting the `roomid` and `siteid`.
 
 Maps to `client.roombookings.room` and passes along the `roomid` and `siteid`.
 
+### `booking.next_page`
+
+Maps to `client.roombookings.bookings` and passes along the `roomid`, `siteid` and `page_token` to fetch the next page.
+
 ### `equipment.room`
 
 Maps to `client.roombookings.room` and passes along the `roomid` and `siteid`.
@@ -122,7 +126,9 @@ UCLAPI::Booking {
      :weeknumber => 23.0
 }
 # optional provide any extra parameters
-> rooms = client.roombookings.bookings(siteid: 374)
+> bookings = client.roombookings.bookings(siteid: 374)
+# to fetch the next page, just call next_page on any book
+> next_bookings = bookings.first.next_page
 ```
 
 ### `GET /roombookings/equipment`
