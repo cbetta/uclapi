@@ -14,7 +14,7 @@ GEM
     hashdiff (0.3.6)
     minitest (5.10.3)
     public_suffix (3.0.0)
-    rake (10.5.0)
+    rake (13.0.6)
     safe_yaml (1.0.4)
     webmock (3.0.1)
       addressable (>= 2.3.6)
@@ -28,7 +28,7 @@ DEPENDENCIES
   awesome_print (~> 1.8.0)
   bundler (~> 1.16.a)
   minitest
-  rake (~> 10.0)
+  rake (~> 13.0)
   uclapi!
   webmock
 
